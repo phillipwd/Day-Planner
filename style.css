@@ -9,8 +9,9 @@ body {
     border: none;
     resize: none;
     color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
+    border: 1px solid black;
+    padding: 10px 0;
+    margin: auto;
   }
   
   .jumbotron {
@@ -28,6 +29,7 @@ body {
   .time-block{
     text-align: center;
     border-radius: 15px;
+    /* padding: 0; */
   }
   
   .row {
@@ -63,10 +65,28 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
+    width: 50px;
+    height: 80px;
+    padding: 0;
+    margin: 0;
   }
   
   .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
+  }
+
+  /* .container{
+  } */
+  
+  .anHour{
+    display: flex;
+    flex: space-between;
+    width: 80vw;
+    align-items: baseline;
+  }
+  .saveButton{
+    height: 50px;
+    margin: auto;
   }
   
