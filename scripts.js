@@ -6,25 +6,23 @@ var hourBlock = document.getElementsByClassName("anHour");
 var H = moment().hours();
 console.log(H);//works
 // console.log(hourBlock[0]);
+var key1 = 0;
+var s1 = 0; 
 
 
 input[0].textContent = localStorage.getItem("8a")
 
-// only works for first hour
-// $(save[0]).on("click", function(){
-//     var s1 = $(input[0]).val();
-//     console.log(s1);
-//     localStorage.removeItem("8a");
-//     localStorage.setItem("8a", s1);    
-// });
 $(".saveButton").on("click", function(){
     // var ind = $(this).attr("id")
     // console.log(ind.val);
-    var key1 = $(this).attr("id")//.parent()//.child[1]().attr("id");
-    console.log(key1);
-    
-    
+    key1 = $(this).attr("id");
+    s1 = $(input[key1]).val();
+    // console.log(key1);
+    localStorage.removeItem(key1);
+    localStorage.setItem(key1, s1);    
 })
+
+input[0].textContent = localStorage.getItem(key1);
 
 var setTime = function (){
     Time[1].innerHTML = moment().format("MMMM Do YYYY, h:mm:ss a");
