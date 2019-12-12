@@ -10,20 +10,28 @@ console.log(H);//works
 
 input[0].textContent = localStorage.getItem("8a")
 
-// console.log(input[0]);
-$(save[0]).on("click", function(){
-    var s1 = $(input[0]).val();
-    console.log(s1);
-    localStorage.removeItem("8a");
-    localStorage.setItem("8a", s1);    
-});
+// only works for first hour
+// $(save[0]).on("click", function(){
+//     var s1 = $(input[0]).val();
+//     console.log(s1);
+//     localStorage.removeItem("8a");
+//     localStorage.setItem("8a", s1);    
+// });
+$(".saveButton").on("click", function(){
+    // var ind = $(this).attr("id")
+    // console.log(ind.val);
+    var key1 = $(this).attr("id")//.parent()//.child[1]().attr("id");
+    console.log(key1);
+    
+    
+})
 
 var setTime = function (){
     Time[1].innerHTML = moment().format("MMMM Do YYYY, h:mm:ss a");
 }
 setInterval(setTime,1000);
 
-for(i = 0; i < 1 ; i++){ // change i < 1 to 10 when rows populated
+for(i = 0; i < 10 ; i++){ // change i < 1 to 10 when rows populated
     if(i < (H-8)){
         hourBlock[i].classList.add("past");
     }
