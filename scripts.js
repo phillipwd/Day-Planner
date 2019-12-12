@@ -6,8 +6,8 @@ var hourBlock = document.getElementsByClassName("anHour");
 var H = moment().hours();
 console.log(H);//works
 // console.log(hourBlock[0]);
-var key1 = 0;
-var s1 = 0; 
+var key0 = 0;//fixme
+var s0 = 0; //fixme
 
 
 input[0].textContent = localStorage.getItem("8a")
@@ -15,14 +15,16 @@ input[0].textContent = localStorage.getItem("8a")
 $(".saveButton").on("click", function(){
     // var ind = $(this).attr("id")
     // console.log(ind.val);
-    key1 = $(this).attr("id");
-    s1 = $(input[key1]).val();
+    var keyid = $(this).attr("id");
+    var sid = $(input[key[keyid]]).val();//fixme
     // console.log(key1);
-    localStorage.removeItem(key1);
-    localStorage.setItem(key1, s1);    
+    localStorage.removeItem(key[keyid]);//fixme
+    localStorage.setItem(key[keyid], s[sid]);  //fixme  
 })
 
-input[0].textContent = localStorage.getItem(key1);
+for(i = 0; i < 10; i++){
+    input[i].textContent = localStorage.getItem(key[i]);//fixme
+}
 
 var setTime = function (){
     Time[1].innerHTML = moment().format("MMMM Do YYYY, h:mm:ss a");
