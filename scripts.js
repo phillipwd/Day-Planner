@@ -2,6 +2,8 @@ var input = document.getElementsByTagName("textarea");
 console.log(input[0].textContent);// works
 var save = document.getElementsByClassName("saveButton");
 var Time = document.getElementsByClassName("lead");
+var H = moment();
+console.log(H.hours());
 
 
 
