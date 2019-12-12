@@ -2,10 +2,10 @@ var input = document.getElementsByTagName("textarea");
 console.log(input[0].textContent);// works
 var save = document.getElementsByClassName("saveButton");
 var Time = document.getElementsByClassName("lead");
-var H = moment();
-console.log(H.hours());
-
-
+var hourBlock = document.getElementsByClassName("anHour");
+var H = moment().hours();
+console.log(H);//works
+// console.log(hourBlock[0]);
 
 
 input[0].textContent = localStorage.getItem("8a")
@@ -22,3 +22,15 @@ var setTime = function (){
     Time[1].innerHTML = moment().format("MMMM Do YYYY, h:mm:ss a");
 }
 setInterval(setTime,1000);
+
+for(i = 0; i < 1 ; i++){ // change i < 1 to 10 when rows populated
+    if(i < (H-8)){
+        hourBlock[i].classList.add("past");
+    }
+    else if(i > (H-8)){
+        hourBlock[i].classList.add("future");
+    }
+    else{
+        hourBlock[i].classList.add("present");
+    }
+}
